@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Timer;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -8,14 +7,12 @@ public class Application {
     public static void main(String args[]) {
         System.out.println("Starting app");
 
-
         Executor executor = Executors.newFixedThreadPool(200);
 
 
         for (int i = 0; i < 500; i++) {
-            executor.execute(() -> new SomeJob().run(true));
+            executor.execute(() -> new SomeJob().run(false));
         }
-
     }
 }
 
@@ -42,7 +39,6 @@ class SomeJob {
             String[] array = new String[100000];
             array[1] = new String("Test");
             Arrays.asList(array).size();
-
         }
     }
 
@@ -53,7 +49,6 @@ class SomeJob {
             e.printStackTrace();
         }
     }
-
 
     private String whoami() {
         return Thread.currentThread().getName();
