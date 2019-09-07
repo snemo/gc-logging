@@ -4,6 +4,7 @@
 From Java 9 the JVM logging was finally unified (more info in JEP158). 
 To enable gc logging you do not have to set tons flags, but know you can set everything via -Xlog.
 
+
      java -Xlog:gc\*=info Application
      
 More info Xlog configuration can be found:
